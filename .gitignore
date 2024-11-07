@@ -1,0 +1,50 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+*.env
+
+# Virtual environment directory
+venv/
+env/
+
+# Docker files
+*.log
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Ignore Docker-specific files
+**/Dockerfile
+.dockerignore
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# SSL Certificates (Let’s Encrypt)
+certs/
+*.pem
+*.key
+
+# Nginx and other server-specific files
+nginx.conf
+certbot/
+
+# Ignore IDE-specific files (optional)
+.vscode/
+.idea/
+*.swp
+
+# Ignore cache and temporary files
+*.tmp
+*.temp
+.cache/
+*.bak
+
+# Ignore macOS-specific files
+.DS_Store
