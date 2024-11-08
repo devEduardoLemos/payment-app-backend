@@ -1,0 +1,27 @@
+services:
+  flask_app:
+    build: .
+    container_name: just-pay-api
+    image: gruposkip/just-pay:latest
+    environment:
+      - API_KEY=${API_KEY}
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  nginx:
+    build: ./nginx  # Build Nginx from the custom Dockerfile
+    container_name: nginx
+    image: gruposkip/nginx-just-pay:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro  # Mount SSL certificates
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
